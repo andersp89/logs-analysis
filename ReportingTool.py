@@ -23,7 +23,7 @@ cur.execute("select title, path_count from articles join (select " +
             "= path_conv group by title, path_count " +
             "order by path_count desc limit 3")
 results = cur.fetchall()
-print (results)
+print(results)
 
 # 2. Who are the most popular article authors of all time? That is, when you
 # sum up all of the articles each author has written, which authors get the
@@ -43,7 +43,7 @@ cur.execute("select name, sum(path_count) from (select name, path_count " +
             "path_conv = slug group by name, path_count) as name_path_count " +
             "where name = name group by name order by sum desc")
 results = cur.fetchall()
-print (results)
+print(results)
 # ALTERNATIVES SOLUTION WITH VIEWS (VIEWS NOT CREATED)
 # Convert path in log to slug-format and count path
 # cur.execute("select replace(path, '/article/', '') as path_conv, count(path)
@@ -88,7 +88,7 @@ cur.execute("select date1, diff from (select date1, " +
             "date1 = date2 group by date1, diff) as diff_table where diff > " +
             "1 group by date1, diff order by diff desc")
 results = cur.fetchall()
-print (results)
+print(results)
 # Close connections
 cur.close()
 conn.close()
