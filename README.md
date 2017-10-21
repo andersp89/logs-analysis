@@ -1,4 +1,3 @@
-
 # Project: Logs Analysis 
 ## Desciption
 Python3 script using SQL to query a PostgreSQL database for 3 answers, they are:
