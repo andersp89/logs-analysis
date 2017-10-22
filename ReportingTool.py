@@ -10,7 +10,7 @@ def connect(database_name="news"):
         db = psycopg2.connect("dbname={}".format(database_name))
         cursor = db.cursor()
         return db, cursor
-    except:
+    except connectionError:
         print("Could not connect to database")
 
 # 1. What are the most popular three articles of all time?
@@ -40,6 +40,8 @@ def popularArticles():
     print("-" * 70)
     cursor.close()
     db.close()
+
+
 popularArticles()
 
 # 2. Who are the most popular article authors of all time? That is, when you
@@ -72,6 +74,8 @@ def popularAuthors():
     print("-" * 70)
     cursor.close()
     db.close()
+
+
 popularAuthors()
 
 # 3. On which days did more than 1% of requests lead to errors? The log table
@@ -125,4 +129,6 @@ def errorDays(entries_view, errors_view):
         print("    {} - {:.2f}%".format(date1, diff))
     cursor.close()
     db.close()
+
+
 errorDays(entries_view, errors_view)
