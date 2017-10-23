@@ -20,12 +20,12 @@ Python3 script using SQL to query a PostgreSQL database for 3 answers, they are:
 7. Download PostgreSQL database "News": https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip
 8. The following views must be created in database, as they are referenced by ReportingTool.py script (Remember to delete "").
 
-"CREATE view entries_view as
+* "CREATE view entries_view as
 select date(time) as date1,
 count(id) as visitors_daily
 from log group by date1;"
 
-"CREATE view errors_view as
+* "CREATE view errors_view as
 select date(time) as date2,
 count(status) as error_daily
 from log where status = '404 NOT FOUND' 
