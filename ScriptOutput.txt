@@ -11,6 +11,4 @@ Most popular authors:
     Markoff Chaney - 84557 views
 ----------------------------------------------------------------------
 Days with more than 1% '404s':
-    July      17, 2016 - 2.26%
-
-# COMMENT2 Why is it, that there are spaces between Month "July" and Date "17", i.e. "      "?
+    July 17, 2016 - 2.26%
